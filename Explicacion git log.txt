@@ -1,0 +1,6 @@
+Cada uno de los integrantes trabajo en su rama, a pesar de eso a la hora
+de los merge nos equivocamos en el orden por ende no figuran en el correcto
+orden las etapas de ingenieria de software. El merge que debio ser primero es
+el de Agregar User Persona y Elicitacion, luego el de modelo Conceptual y Especificacion y 
+por ultimo el de bocetos validaciones y verificaciones. Solo queriamos dejar en claro, que 
+lo hicimos en orden pero los merge quedaron desordenados.
