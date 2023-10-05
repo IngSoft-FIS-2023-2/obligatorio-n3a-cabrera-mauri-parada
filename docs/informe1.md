@@ -166,7 +166,7 @@ El usuario intenta ver la ficha de un miembro, pero el miembro seleccionado no t
 
 Caso de Uso 3: Compartir Árbol Genealógico
 
-Nombre: Compartir Árbol Genealógico
+Nombre: Compartir Árbol Genealógico.
 ID: UC03
 Descripción: Este caso de uso permite a un usuario familiar compartir el árbol genealógico con otros miembros de la familia.
 Precondiciones: El usuario ha iniciado sesión en la aplicación y tiene permisos para compartir el árbol.
