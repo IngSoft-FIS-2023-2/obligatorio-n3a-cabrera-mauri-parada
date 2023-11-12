@@ -1,4 +1,4 @@
-import { MiembroList } from "./miembrolist.js";
+import { ArbolList } from "./arbollist.js";
 
 export class Arbol {
     #nombre;
@@ -19,7 +19,7 @@ export class Arbol {
     }
   
     toString() {
-      return `Arbol: ${this.#nombre}`;
+      return `Arbol Genealóligo: ${this.#nombre}`;
     }
   }
   

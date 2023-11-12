@@ -15,52 +15,52 @@
   <nav class="navbar navbar-expand">
     <a class="navbar-brand ps-2" href="#">Proyecto 2023S1</a>
     <div class="nav nav-pills" id="nav-tab" role="tablist">
-      <button class="nav-link active me-3" id="nav-add-arbol-tab" data-bs-toggle="tab" data-bs-target="#nav-add-arbol" type="button" role="tab" aria-controls="nav-add-arbol" aria-selected="true">Agregar arbol</button>
-      <button class="nav-link" id="nav-arboles-list-tab" data-bs-toggle="tab" data-bs-target="#nav-arboles-list" type="button" role="tab" aria-controls="nav-arboles-list" aria-selected="false">Lista de Arboles</button>
-      <button class="nav-link" id="nav-add-miembro-tab" data-bs-toggle="tab" data-bs-target="#nav-add-miembro" type="button" role="tab" aria-controls="nav-add-miembro" aria-selected="false">Agregar Miembro</button>
-      <button class="nav-link" id="nav-add-evento-tab" data-bs-toggle="tab" data-bs-target="#nav-add-evento" type="button" role="tab" aria-controls="nav-add-evento" aria-selected="false">Agregar Evento Cronologico</button>
-      <button class="nav-link" id="nav-ficha-vida-tab" data-bs-toggle="tab" data-bs-target="#nav-ficha-vida" type="button" role="tab" aria-controls="nav-ficha-vida" aria-selected="false">Ficha de Vida</button>
-      <button class="nav-link" id="nav-busqueda-tab" data-bs-toggle="tab" data-bs-target="#nav-busqueda" type="button" role="tab" aria-controls="nav-busqueda" aria-selected="false">Busqueda y Filtrado</button>
-
+      <button class="nav-link active me-3" id="nav-add-arbol-tab" data-bs-toggle="tab" data-bs-target="#nav-add-arbol"
+        type="button" role="tab" aria-controls="nav-add-arbol" aria-selected="true">Agregar arbol</button>
+      <button class="nav-link" id="nav-arboles-list-tab" data-bs-toggle="tab" data-bs-target="#nav-arboles-list"
+        type="button" role="tab" aria-controls="nav-arboles-list" aria-selected="false">Lista de Arboles</button>
+      <button class="nav-link" id="nav-add-miembro-tab" data-bs-toggle="tab" data-bs-target="#nav-add-miembro"
+        type="button" role="tab" aria-controls="nav-add-miembro" aria-selected="false">Agregar Miembro</button>
+      <button class="nav-link" id="nav-add-evento-tab" data-bs-toggle="tab" data-bs-target="#nav-add-evento"
+        type="button" role="tab" aria-controls="nav-add-evento" aria-selected="false">Agregar Evento Cronologico</button>
+      <button class="nav-link" id="nav-ficha-vida-tab" data-bs-toggle="tab" data-bs-target="#nav-ficha-vida"
+        type="button" role="tab" aria-controls="nav-ficha-vida" aria-selected="false">Ficha de Vida</button>
+      <button class="nav-link" id="nav-busqueda-tab" data-bs-toggle="tab" data-bs-target="#nav-busqueda" type="button"
+        role="tab" aria-controls="nav-busqueda" aria-selected="false">Busqueda y Filtrado</button>
     </div>
   </nav>
 
-  
-
   <div class="tab-content" id="nav-tabContent">
     <!-- Pagina inicial -->
-    <div class="tab-pane fade show active" id="nav-add-arbol" role="tabpanel" aria-labelledby="nav-add-arbol-tab"></div>
+    <section class="tab-pane fade show active" id="nav-add-arbol" role="tabpanel" aria-labelledby="nav-add-arbol-tab">
       <div>
         <h1 class="display-2">Arbolito</h1>
         <blockquote class="blockquote">
           <p>Bienvenido a Arbolito, cree su árbol genealógico.</p>
         </blockquote>
-        <button class="btn btn-primary" type="button">Crear árbol</button>
-        <button class="btn btn-primary" type="button">Ver mis árboles</button>
+        <div class="btn-group" role="group">
+          <button  type="button" class="btn btn-primary" type="button">Crear árbol</button>
+          <button  type="button" class="btn btn-primary" type="button">Ver mis árboles</button>
+        </div>
         <h1 class="display-6">Creación de nuevo árbol</h1>
-      <form class="row g-3">
-        <div class="col-12">
-          <label for="inputNombreArbol" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="inputNombreArbol" placeholder="Ingrese el nombre..." required>
-          <ul id="arboles-list" class="list-group-numbered"></ul>
-        </div>
-        <div class="col-12">
-          <button id="btnNuevoArbol" type="submit" class="btn btn-primary">Crear</button>
-        </div>
-      </form>
+        <form class="row g-3">
+          <div class="col-12">
+            <label for="inputNombreArbol" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="inputNombreArbol" placeholder="Ingrese el nombre..." required>
+          </div>
+          <div class="col-12">
+            <button type="button" id="btnNuevoArbol" class="btn btn-primary">Crear</button>
+          </div>
+        </form>
       </div>
-    </div>
+    </section>
     <!-- Formulario Crear un nuevo Arbol -->
     <div class="tab-pane fade" id="nav-arboles-list" role="tabpanel" aria-labelledby="nav-arboles-list-tab">
-      <h1 class="display-6">Mis Árboles</h1>
+        <h1 class="display-6">Mis Árboles</h1>
         <div>
-          <ul class="list-group">
-            <li class="list-group-item">Árbol 1</li>
-            <li class="list-group-item">Árbol 2</li>
-            <li class="list-group-item">Árbol 3</li>
-          </ul>
+            <ul id="arboles-list-2" class="list-group">
+            </ul>
         </div>
-      
     </div>
     <!-- Formulario Agregar Miembro al Arbol -->
     <div class="tab-pane fade" id="nav-add-miembro" role="tabpanel" aria-labelledby="nav-add-miembro-tab">
@@ -100,7 +100,7 @@
           </div>
         </fieldset>
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Agregar Miembro</button>
+          <button type="button" class="btn btn-primary">Agregar Miembro</button>
         </div>
       </form>
     </div>
@@ -122,7 +122,7 @@
         </div>
         <br/>
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Agregar</button>
+          <button type="button" class="btn btn-primary">Agregar</button>
         </div>
       </form>
     </div>
@@ -142,8 +142,8 @@
         <label class="form-label">Fecha de Nacimiento:</label>
       </div>
       <div class="col-12">
-        <button type="submit" class="btn btn-primary">Cronología de eventos</button>
-        <button type="submit" class="btn btn-primary">Agregar Evento</button>
+        <button type="button" class="btn btn-primary">Cronología de eventos</button>
+        <button type="button" class="btn btn-primary">Agregar Evento</button>
       </div>
     </div>
     <!-- Búsqueda y Filtrado -->
@@ -155,7 +155,7 @@
           <input type="text" class="form-control" id="inputNombreDelMiembro" placeholder="Nombre del Miembro..." required>
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Buscar</button>
+          <button type="button" class="btn btn-primary">Buscar</button>
         </div>
       </form>
     </div>
