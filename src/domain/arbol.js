@@ -6,6 +6,7 @@ export class Arbol {
     
     constructor(aNombre) {
       this.#nombre = aNombre;
+      this.#listaMiembros = [];
     }
   
     setNombre() {
@@ -16,6 +17,9 @@ export class Arbol {
     }
     getArbol() {
       return this.#listaMiembros;
+    }
+    add(miembro) {
+      this.#listaMiembros.push(miembro);
     }
   
     toString() {

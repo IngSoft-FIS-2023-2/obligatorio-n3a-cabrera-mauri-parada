@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const btnCrearMiembro = document.getElementById('btnNuevoMiembro');
   
   btnCrearMiembro.addEventListener('click', () => {
+    const inputArbol = document.getElementById('selectArbol').value;
     const inputNombreMiembro = document.getElementById('inputNombre').value;
     const inputApellidoMiembro = document.getElementById('inputApellido').value;
     const inputFechaNacimiento = document.getElementById('inputFechaDeNacimiento').value;
@@ -20,8 +21,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const newMiembro = new Miembro(inputNombreMiembro,inputApellidoMiembro,inputFechaNacimiento);
     newMiembro.setGenero(inputMasculino);
     mainMiembroList.add(newMiembro);
+    console.log(inputArbol);
+    
+    mainArbolList.getArboles().forEach((arbol) => {
+      if (arbol.getNombre() === inputArbol) {
+        console.log(arbol);
+        arbol.add(newMiembro);
+      }
+    });
+
+    //inputArbol.add(newMiembro);
     console.log(mainMiembroList);
     console.log(newMiembro.toString());
+
   });
 
 
@@ -37,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       console.error('Please enter a valid tree name.');
     }
+    updateMiembrosDropdown();
   });
 
   function loadArbolList(newArbol) {
@@ -46,8 +59,24 @@ document.addEventListener('DOMContentLoaded', function() {
     li.classList.add('list-group-item');
     li.innerText = newArbol.toString();
     arbolesList.appendChild(li);
+  }
 
-    // Instead of this line:
-    // document.getElementById('inputNombreArbol').appendChild(li);
+  function updateMiembrosDropdown() {
+    // Clear existing options
+    selectArbol.innerHTML = '';
+
+    // Add a default option
+    const defaultOption = document.createElement('option');
+    defaultOption.text = 'Seleccionar Árbol...';
+    defaultOption.value = '';
+    selectArbol.add(defaultOption);
+
+    // Add each member as an option
+    mainArbolList.getArboles().forEach((arbol) => {
+      const option = document.createElement('option');
+      option.text = arbol.toString();
+      option.value = arbol.getNombre(); // You can adjust the value as needed
+      selectArbol.add(option);
+    });
   }
 });
