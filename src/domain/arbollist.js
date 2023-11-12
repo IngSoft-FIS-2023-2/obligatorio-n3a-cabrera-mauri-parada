@@ -1,4 +1,4 @@
-export class MiembroList {
+export class ArbolList {
   #arboles;
 
   constructor() {
@@ -7,7 +7,7 @@ export class MiembroList {
 
   add(arbol) {
     const arbolInList = this.#arboles.some(
-        (m) => m.getNombre() == arbol.getNombre());
+      (m) => m.getNombre() == arbol.getNombre());
     if (!arbolInList) {
       this.#arboles.push(arbol);
     } else {
@@ -16,7 +16,7 @@ export class MiembroList {
     }
   }
 
-  getArbol() {
+  getArboles() {
     return this.#arboles;
   }
 }

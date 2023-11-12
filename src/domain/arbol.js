@@ -1,4 +1,4 @@
-import { MiembroList } from "./miembrolist";
+import { MiembroList } from "./miembrolist.js";
 
 export class Arbol {
     #nombre;
@@ -8,6 +8,9 @@ export class Arbol {
       this.#nombre = aNombre;
     }
   
+    setNombre() {
+      this.#nombre = aNombre;
+    }
     getNombre() {
       return this.#nombre;
     }
@@ -16,7 +19,7 @@ export class Arbol {
     }
   
     toString() {
-      return `Miembro: ${this.#nombre}`;
+      return `Arbol: ${this.#nombre}`;
     }
   }
   

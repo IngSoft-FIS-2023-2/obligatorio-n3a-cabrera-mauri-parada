@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Árboles Genealógicos</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Árboles Genealógicos</h1>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Personas</h2>
+        <ul id="personas-list" class="list-group">
+          <!-- Lista de personas se agregará aquí -->
+        </ul>
+        <input type="text" id="nombre-input" class="form-control" placeholder="Nombre">
+        <input type="date" id="fecha-nacimiento-input" class="form-control" placeholder="Fecha de Nacimiento">
+        <button id="agregar-persona-btn" class="btn btn-primary">Agregar Persona</button>
+      </div>
+      <div class="col-md-8">
+        <h2>Eventos Cronológicos</h2>
+        <ul id="eventos-list" class="list-group">
+          <!-- Lista de eventos se agregará aquí -->
+        </ul>
+        <input type="text" id="evento-descripcion-input" class="form-control" placeholder="Descripción del Evento">
+        <input type="date" id="evento-fecha-input" class="form-control" placeholder="Fecha del Evento">
+        <button id="agregar-evento-btn" class="btn btn-primary">Agregar Evento</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

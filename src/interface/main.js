@@ -1,34 +1,68 @@
-import { Country } from "../domain/country.js";
-import { CountryList } from "../domain/countrylist.js";
+import { Arbol } from "../domain/arbol.js";
+import { ArbolList } from "../domain/arbollist.js";
+import { Miembro } from "../domain/miembro.js";
+import { MiembroList } from "../domain/miembrolist.js";
+import { Evento } from "../domain/evento.js";
 
-const btnAdd = document.getElementById('btn_add');
-const inpName = document.getElementById('inp_name');
-const inpCapital = document.getElementById('inp_capital');
+//const btnAdd = document.getElementById('');
+//const inpNombre = document.getElementById('');
+//const inApellido = document.getElementById('');
+//const inFechaNacimiento = document.getElementById('');
 
-const mainCountryList = new CountryList();
+const mainArbolList = new ArbolList();
+//const mainMiembroList = new MiembroList();
 
-btnAdd.addEventListener('click', () => {
-  const newCountry = new Country(inpName.value);
-  newCountry.setCapital(inpCapital.value);
-  mainCountryList.add(newCountry);
-  console.log(newCountry.toString());
-  loadCountryList();
+document.getElementById('btnNuevoArbol').addEventListener('click', () => {
+  const newArbol = new Arbol(document.getElementById('inputNombreArbol').value);
+  //newArbol.setNombre(document.getElementById('inputNombreArbol').value);
+  mainArbolList.add(newArbol);
+  console.log(mainArbolList);
+  loadArbolList(newArbol);
 } );
 
-function loadCountryList(){
-  const countries = mainCountryList.getCountries();
-  let seccountries = document.getElementById('seccountries');
+function loadArbolList(newArbol) {
+  const arbolesList = document.getElementById('arboles-list');
+  const arbolesContainer = document.getElementById("arboles");
+  const emptyList = document.getElementById("empty-list");
   
-  for(let i = 0; i < countries.length; i++) {
-    let country = countries[i];
+  //emptyList.classList.add('col-12');
+  //arbolesContainer.classList.remove("col-12");
+  let li = document.createElement('li');
+  li.classList.add('list-group-item');
+  li.innerText = newArbol.toString();
+  arbolesList.appendChild(li);
+}
 
-    let infocountry = document.createElement("div")
-    infocountry.className = "infocountry";
-    infocountry.innerHTML = country.toString();
-    seccountries.appendChild(infocountry);
+/*
+btnAdd.addEventListener('click', () => {
+  const newMiembro = new Miembro(inpNombre.value, inApellido.value, inFechaNacimiento.value);
+  newMiembro.setNombre(inpNombre.value);
+  mainMiembroList.add(newMiembro);
+  console.log(newMiembro.toString());
+  loadMiembroList();
+} );
+
+function agregarArbol(){
+  const arboles = mainArbolList.getArbol();
+  mainArbolList.add()
+
+}
+
+function loadMiembroList(){
+  const miembros = mainMiembroList.getMiembros();
+  let secMiembros = document.getElementById('');
+  
+  for(let i = 0; i < miembros.length; i++) {
+    let miembro = miembros[i];
+
+    let infoMiembro = document.createElement("div")
+    infoMiembro.className = "infoMiembro";
+    infoMiembro.innerHTML = miembro.toString();
+    secMiembros.appendChild(infoMiembro);
 
     let saltoLinea = document.createElement('br');
-    seccountries.appendChild(saltoLinea);
+    secMiembros.appendChild(saltoLinea);
 
   }
 }
+*/

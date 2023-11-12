@@ -11,125 +11,155 @@
 </head>
 
 <body>
-  <!-- Pagina inicial -->
-  <div>
-    <h1 class="display-2">Arbolito</h1>
-    <blockquote class="blockquote">
-      <p>Bienvenido a Arbolito, cree su árbol genealógico.</p>
-    </blockquote>
-    <button class="btn btn-primary" type="button">Crear árbol</button>
-    <button class="btn btn-primary" type="button">Ver mis árboles</button>
-    <br/>
-    <br/>
-    <h1 class="display-6">Mis Árboles</h1>
-    <div>
-      <ul class="list-group">
-        <li class="list-group-item">Árbol 1</li>
-        <li class="list-group-item">Árbol 2</li>
-        <li class="list-group-item">Árbol 3</li>
-      </ul>
+  <!-- Menú -->
+  <nav class="navbar navbar-expand">
+    <a class="navbar-brand ps-2" href="#">Proyecto 2023S1</a>
+    <div class="nav nav-pills" id="nav-tab" role="tablist">
+      <button class="nav-link active me-3" id="nav-add-arbol-tab" data-bs-toggle="tab" data-bs-target="#nav-add-arbol" type="button" role="tab" aria-controls="nav-add-arbol" aria-selected="true">Agregar arbol</button>
+      <button class="nav-link" id="nav-arboles-list-tab" data-bs-toggle="tab" data-bs-target="#nav-arboles-list" type="button" role="tab" aria-controls="nav-arboles-list" aria-selected="false">Lista de Arboles</button>
+      <button class="nav-link" id="nav-add-miembro-tab" data-bs-toggle="tab" data-bs-target="#nav-add-miembro" type="button" role="tab" aria-controls="nav-add-miembro" aria-selected="false">Agregar Miembro</button>
+      <button class="nav-link" id="nav-add-evento-tab" data-bs-toggle="tab" data-bs-target="#nav-add-evento" type="button" role="tab" aria-controls="nav-add-evento" aria-selected="false">Agregar Evento Cronologico</button>
+      <button class="nav-link" id="nav-ficha-vida-tab" data-bs-toggle="tab" data-bs-target="#nav-ficha-vida" type="button" role="tab" aria-controls="nav-ficha-vida" aria-selected="false">Ficha de Vida</button>
+      <button class="nav-link" id="nav-busqueda-tab" data-bs-toggle="tab" data-bs-target="#nav-busqueda" type="button" role="tab" aria-controls="nav-busqueda" aria-selected="false">Busqueda y Filtrado</button>
+
     </div>
-  </div>
-  <br/>
-
-
-  <!-- Formulario Agregar Miembro al Arbol -->
-  <h1 class="display-6">Registro de miembros de la familia</h1>
-  <form class="row g-3">
-
-    <div class="col-12">
-      <label for="inputNombre" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="inputNombre" placeholder="Ingrese su nombre..." required>
-    </div>
-
-    <div class="col-12">
-      <label for="inputApellido" class="form-label">Apellido</label>
-      <input type="text" class="form-control" id="inputApellido" placeholder="Ingrese su apellido..." required>
-    </div>
-
-    <div class="col-12">
-      <label for="inputEdad" class="form-label">Edad</label>
-      <input type="number" class="form-control" id="inputEdad" placeholder="Ingrese su edad..." required>
-    </div>
-
-    <div class="col-md-2">
-      <label for="inputFechaDeNacimiento" class="form-label">Fecha de Nacimiento</label>
-      <input type="date" class="form-control" id="inputFechaDeNacimiento" required>
-    </div>
-    <br/>
-
-    <fieldset class="row mb-3">
-      <legend class="col-form-label col-sm-2 pt-0">Género:</legend>
-      <div class="col-sm-10">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridMasculino" value="option1">
-          <label class="form-check-label" for="gridMasculino">
-            Masculino
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridFemenino" value="option2">
-          <label class="form-check-label" for="gridFemenino">
-            Femenino
-          </label>
-        </div>
-      </div>
-    </fieldset>
-
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Agregar Miembro</button>
-    </div>
-  </form>
-
-
-  <!-- Formularion de Evento -->
-  <h1 class="display-6">Agregar Nuevo Evento</h1>
-  <form class="row g-3">
-
-    <div class="col-12">
-      <label for="inputNombreDelEvento" class="form-label">Nombre del Evento</label>
-      <input type="text" class="form-control" id="inputNombreDelEvento" placeholder="Evento..." required>
-    </div>
-
-    <div class="col-12">
-      <label for="inputDescripcion" class="form-label">Descripción del Evento</label>
-      <input type="text" class="form-control" id="inputDescripcion" placeholder="Descripción..." required>
-    </div>
-
-    <div class="col-md-2">
-      <label for="inputFechaDeEvento" class="form-label">Fecha del Evento</label>
-      <input type="date" class="form-control" id="inputFechaDeEvento" required>
-    </div>
-    <br/>
-
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Agregar</button>
-    </div>
-  </form>
-
-  <!-- Ficha de Vida -->
-  <h1 class="display-6">Ficha de Información de Vida</h1>
-  <div class="col-12">
-    <label class="form-label">Nombre:</label>
-  </div>
-  <div>
-    <label class="form-label">Apellido:</label>
-  </div>
-  <div>
-    <label class="form-label">Edad:</label>
-  </div>
-  <div>
-    <label class="form-label">Fecha de Nacimiento:</label>
-  </div>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Cronología de eventos</button>
-    <button type="submit" class="btn btn-primary">Agregar Evento</button>
-  </div>
-
-  <!-- Búsqueda y Filtrado -->
-
+  </nav>
 
   
+
+  <div class="tab-content" id="nav-tabContent">
+    <!-- Pagina inicial -->
+    <div class="tab-pane fade show active" id="nav-add-arbol" role="tabpanel" aria-labelledby="nav-add-arbol-tab"></div>
+      <div>
+        <h1 class="display-2">Arbolito</h1>
+        <blockquote class="blockquote">
+          <p>Bienvenido a Arbolito, cree su árbol genealógico.</p>
+        </blockquote>
+        <button class="btn btn-primary" type="button">Crear árbol</button>
+        <button class="btn btn-primary" type="button">Ver mis árboles</button>
+        <h1 class="display-6">Creación de nuevo árbol</h1>
+      <form class="row g-3">
+        <div class="col-12">
+          <label for="inputNombreArbol" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="inputNombreArbol" placeholder="Ingrese el nombre..." required>
+          <ul id="arboles-list" class="list-group-numbered"></ul>
+        </div>
+        <div class="col-12">
+          <button id="btnNuevoArbol" type="submit" class="btn btn-primary">Crear</button>
+        </div>
+      </form>
+      </div>
+    </div>
+    <!-- Formulario Crear un nuevo Arbol -->
+    <div class="tab-pane fade" id="nav-arboles-list" role="tabpanel" aria-labelledby="nav-arboles-list-tab">
+      <h1 class="display-6">Mis Árboles</h1>
+        <div>
+          <ul class="list-group">
+            <li class="list-group-item">Árbol 1</li>
+            <li class="list-group-item">Árbol 2</li>
+            <li class="list-group-item">Árbol 3</li>
+          </ul>
+        </div>
+      
+    </div>
+    <!-- Formulario Agregar Miembro al Arbol -->
+    <div class="tab-pane fade" id="nav-add-miembro" role="tabpanel" aria-labelledby="nav-add-miembro-tab">
+      <h1 class="display-6">Registro de miembros de la familia</h1>
+      <form class="row g-3">
+        <div class="col-12">
+          <label for="inputNombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="inputNombre" placeholder="Ingrese su nombre..." required>
+        </div>
+        <div class="col-12">
+          <label for="inputApellido" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="inputApellido" placeholder="Ingrese su apellido..." required>
+        </div>
+        <div class="col-12">
+          <label for="inputEdad" class="form-label">Edad</label>
+          <input type="number" class="form-control" id="inputEdad" placeholder="Ingrese su edad..." required>
+        </div>
+        <div class="col-md-2">
+          <label for="inputFechaDeNacimiento" class="form-label">Fecha de Nacimiento</label>
+          <input type="date" class="form-control" id="inputFechaDeNacimiento" required>
+        </div>
+        <fieldset class="row mb-3">
+          <legend class="col-form-label col-sm-2 pt-0">Género:</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridMasculino" value="option1">
+              <label class="form-check-label" for="gridMasculino">
+                Masculino
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridFemenino" value="option2">
+              <label class="form-check-label" for="gridFemenino">
+                Femenino
+              </label>
+            </div>
+          </div>
+        </fieldset>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Agregar Miembro</button>
+        </div>
+      </form>
+    </div>
+    <!-- Formularion de Evento -->
+    <div class="tab-pane fade" id="nav-add-evento" role="tabpanel" aria-labelledby="nav-add-evento-tab"> 
+      <h1 class="display-6">Agregar Nuevo Evento</h1>
+      <form class="row g-3">
+        <div class="col-12">
+          <label for="inputNombreDelEvento" class="form-label">Nombre del Evento</label>
+          <input type="text" class="form-control" id="inputNombreDelEvento" placeholder="Evento..." required>
+        </div>
+        <div class="col-12">
+          <label for="inputDescripcion" class="form-label">Descripción del Evento</label>
+          <input type="text" class="form-control" id="inputDescripcion" placeholder="Descripción..." required>
+        </div>
+        <div class="col-md-2">
+          <label for="inputFechaDeEvento" class="form-label">Fecha del Evento</label>
+          <input type="date" class="form-control" id="inputFechaDeEvento" required>
+        </div>
+        <br/>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Agregar</button>
+        </div>
+      </form>
+    </div>
+    <!-- Ficha de Vida -->
+    <div class="tab-pane fade" id="nav-ficha-vida" role="tabpanel" aria-labelledby="nav-ficha-vida-tab">
+      <h1 class="display-6">Ficha de Información de Vida</h1>
+      <div class="col-12">
+        <label class="form-label">Nombre:</label>
+      </div>
+      <div>
+        <label class="form-label">Apellido:</label>
+      </div>
+      <div>
+        <label class="form-label">Edad:</label>
+      </div>
+      <div>
+        <label class="form-label">Fecha de Nacimiento:</label>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Cronología de eventos</button>
+        <button type="submit" class="btn btn-primary">Agregar Evento</button>
+      </div>
+    </div>
+    <!-- Búsqueda y Filtrado -->
+    <div class="tab-pane fade" id="nav-busqueda" role="tabpanel" aria-labelledby="nav-busqueda-tab">
+      <h1 class="display-6">Búsquea y Filtrado</h1>
+      <form class="row g-3">
+        <div class="col-12">
+          <label for="inputNombreDelMiembro" class="form-label">Nombre:</label>
+          <input type="text" class="form-control" id="inputNombreDelMiembro" placeholder="Nombre del Miembro..." required>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Buscar</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
