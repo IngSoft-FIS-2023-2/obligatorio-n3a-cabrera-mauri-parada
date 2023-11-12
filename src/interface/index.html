@@ -38,10 +38,7 @@
         <blockquote class="blockquote">
           <p>Bienvenido a Arbolito, cree su árbol genealógico.</p>
         </blockquote>
-        <div class="btn-group" role="group">
-          <button  type="button" class="btn btn-primary" type="button">Crear árbol</button>
-          <button  type="button" class="btn btn-primary" type="button">Ver mis árboles</button>
-        </div>
+        <!-- Formulario Crear un nuevo Arbol -->
         <h1 class="display-6">Creación de nuevo árbol</h1>
         <form class="row g-3">
           <div class="col-12">
@@ -54,7 +51,7 @@
         </form>
       </div>
     </section>
-    <!-- Formulario Crear un nuevo Arbol -->
+    <!-- Liste de Arboles Genealogicos -->
     <div class="tab-pane fade" id="nav-arboles-list" role="tabpanel" aria-labelledby="nav-arboles-list-tab">
         <h1 class="display-6">Mis Árboles</h1>
         <div>
@@ -74,10 +71,6 @@
           <label for="inputApellido" class="form-label">Apellido</label>
           <input type="text" class="form-control" id="inputApellido" placeholder="Ingrese su apellido..." required>
         </div>
-        <div class="col-12">
-          <label for="inputEdad" class="form-label">Edad</label>
-          <input type="number" class="form-control" id="inputEdad" placeholder="Ingrese su edad..." required>
-        </div>
         <div class="col-md-2">
           <label for="inputFechaDeNacimiento" class="form-label">Fecha de Nacimiento</label>
           <input type="date" class="form-control" id="inputFechaDeNacimiento" required>
@@ -86,13 +79,13 @@
           <legend class="col-form-label col-sm-2 pt-0">Género:</legend>
           <div class="col-sm-10">
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridMasculino" value="option1">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridMasculino">
               <label class="form-check-label" for="gridMasculino">
                 Masculino
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridFemenino" value="option2">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridFemenino">
               <label class="form-check-label" for="gridFemenino">
                 Femenino
               </label>
@@ -100,7 +93,7 @@
           </div>
         </fieldset>
         <div class="col-12">
-          <button type="button" class="btn btn-primary">Agregar Miembro</button>
+          <button type="button" id="btnNuevoMiembro" class="btn btn-primary">Agregar Miembro</button>
         </div>
       </form>
     </div>

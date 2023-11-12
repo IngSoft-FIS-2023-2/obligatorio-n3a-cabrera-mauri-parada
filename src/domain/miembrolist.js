@@ -1,5 +1,3 @@
-import { Miembro } from "./miembro.js";
-
 export class MiembroList {
   #miembros;
 

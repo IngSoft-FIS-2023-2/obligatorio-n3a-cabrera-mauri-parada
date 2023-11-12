@@ -5,9 +5,25 @@ import { MiembroList } from "../domain/miembrolist.js";
 import { Evento } from "../domain/evento.js";
 
 const mainArbolList = new ArbolList();
+const mainMiembroList = new MiembroList();
 
 document.addEventListener('DOMContentLoaded', function() {
   const btnCrearArbol = document.getElementById('btnNuevoArbol');
+  const btnCrearMiembro = document.getElementById('btnNuevoMiembro');
+  
+  btnCrearMiembro.addEventListener('click', () => {
+    const inputNombreMiembro = document.getElementById('inputNombre').value;
+    const inputApellidoMiembro = document.getElementById('inputApellido').value;
+    const inputFechaNacimiento = document.getElementById('inputFechaDeNacimiento').value;
+    const inputMasculino = document.getElementById('gridMasculino').checked;
+
+    const newMiembro = new Miembro(inputNombreMiembro,inputApellidoMiembro,inputFechaNacimiento);
+    newMiembro.setGenero(inputMasculino);
+    mainMiembroList.add(newMiembro);
+    console.log(mainMiembroList);
+    console.log(newMiembro.toString());
+  });
+
 
   btnCrearArbol.addEventListener('click', () => {
     const inputNombreArbol = document.getElementById('inputNombreArbol');
