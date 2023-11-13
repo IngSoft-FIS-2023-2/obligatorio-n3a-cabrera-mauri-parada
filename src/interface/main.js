@@ -10,7 +10,10 @@ const mainMiembroList = new MiembroList();
 document.addEventListener('DOMContentLoaded', function() {
   const btnCrearArbol = document.getElementById('btnNuevoArbol');
   const btnCrearMiembro = document.getElementById('btnNuevoMiembro');
+  const btnCrearEvento = document.getElementById('btnNuevoEvento');
+
   
+  //Creacion de Miembro
   btnCrearMiembro.addEventListener('click', () => {
     const inputArbol = document.getElementById('selectArbol').value;
     const inputNombreMiembro = document.getElementById('inputNombre').value;
@@ -30,13 +33,13 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    //inputArbol.add(newMiembro);
+    updateMiembrosDropdown();
     console.log(mainMiembroList);
     console.log(newMiembro.toString());
 
   });
 
-
+  //Creacion de Arbol
   btnCrearArbol.addEventListener('click', () => {
     const inputNombreArbol = document.getElementById('inputNombreArbol');
     const nombreArbolValue = inputNombreArbol.value.trim();
@@ -49,7 +52,26 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       console.error('Please enter a valid tree name.');
     }
-    updateMiembrosDropdown();
+    updateArbolesDropdown();
+  });
+
+  //Creacion de Evento Cronologico
+  btnCrearEvento.addEventListener('click', () => {
+    const miembroDelEvento = document.getElementById('selectMiembro').value;
+    const Descripcion = document.getElementById('inputDescripcion').value;
+    const FechaDeEvento = document.getElementById('inputFechaDeEvento').value;
+
+    const newEvento = new Evento(Descripcion, FechaDeEvento);
+
+    mainMiembroList.getMiembros().forEach((miembro) => {
+      if (miembro.getNombre() === miembroDelEvento) {
+        miembro.agregarEvento(newEvento);
+        console.log(miembro.getEventos());
+      }
+      miembro.getEventos();
+    });
+    console.log(newEvento);
+    console.log(mainMiembroList);
   });
 
   function loadArbolList(newArbol) {
@@ -61,8 +83,9 @@ document.addEventListener('DOMContentLoaded', function() {
     arbolesList.appendChild(li);
   }
 
-  function updateMiembrosDropdown() {
+  function updateArbolesDropdown() {
     // Clear existing options
+    const selectArbol = document.getElementById('selectArbol');
     selectArbol.innerHTML = '';
 
     // Add a default option
@@ -77,6 +100,25 @@ document.addEventListener('DOMContentLoaded', function() {
       option.text = arbol.toString();
       option.value = arbol.getNombre(); // You can adjust the value as needed
       selectArbol.add(option);
+    });
+  }
+  function updateMiembrosDropdown() {
+    // Clear existing options
+    const selectMiembro = document.getElementById('selectMiembro');
+    selectMiembro.innerHTML = '';
+
+    // Add a default option
+    const defaultOption = document.createElement('option');
+    defaultOption.text = 'Seleccionar Miembro...';
+    defaultOption.value = '';
+    selectMiembro.add(defaultOption);
+
+    // Add each member as an option
+    mainMiembroList.getMiembros().forEach((miembro) => {
+      const option = document.createElement('option');
+      option.text = miembro.toString();
+      option.value = miembro.getNombre(); // You can adjust the value as needed
+      selectMiembro.add(option);
     });
   }
 });

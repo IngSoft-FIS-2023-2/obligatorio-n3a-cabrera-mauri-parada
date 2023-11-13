@@ -33,7 +33,7 @@ export class Miembro {
     return this.#eventos;
   }
   agregarEvento(evento) {
-    this.eventos.push(evento);
+    this.#eventos.push(evento);
   }
   toString() {
     return `Miembro: ${this.#nombre} ${this.#apellido} - Fecha de Nacimiento: ${this.#fechaNacimiento} - Género: ${this.#genero}`;
