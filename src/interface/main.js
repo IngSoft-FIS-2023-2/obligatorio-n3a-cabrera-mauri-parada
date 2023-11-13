@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const btnCrearArbol = document.getElementById('btnNuevoArbol');
   const btnCrearMiembro = document.getElementById('btnNuevoMiembro');
   const btnCrearEvento = document.getElementById('btnNuevoEvento');
+  const btnBusquedaFiltrado = document.getElementById('btnBusquedaFiltrado');
 
-  
   //Creacion de Miembro
   btnCrearMiembro.addEventListener('click', () => {
     const inputArbol = document.getElementById('selectArbol').value;
@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Please enter a valid tree name.');
     }
     updateArbolesDropdown();
+    updateArbolesDropdownByF();
   });
 
   //Creacion de Evento Cronologico
@@ -102,6 +103,27 @@ document.addEventListener('DOMContentLoaded', function() {
       selectArbol.add(option);
     });
   }
+
+  function updateArbolesDropdownByF() {
+    // Clear existing options
+    const selectArbol = document.getElementById('selectArbolByF');
+    selectArbol.innerHTML = '';
+
+    // Add a default option
+    const defaultOption = document.createElement('option');
+    defaultOption.text = 'Seleccionar Árbol...';
+    defaultOption.value = '';
+    selectArbol.add(defaultOption);
+
+    // Add each member as an option
+    mainArbolList.getArboles().forEach((arbol) => {
+      const option = document.createElement('option');
+      option.text = arbol.toString();
+      option.value = arbol.getNombre(); // You can adjust the value as needed
+      selectArbol.add(option);
+    });
+  }
+
   function updateMiembrosDropdown() {
     // Clear existing options
     const selectMiembro = document.getElementById('selectMiembro');
@@ -121,4 +143,41 @@ document.addEventListener('DOMContentLoaded', function() {
       selectMiembro.add(option);
     });
   }
+
+  //Busqueda y Filtrado
+  btnBusquedaFiltrado.addEventListener('click', () => {
+    const selectArbolByF = document.getElementById('selectArbolByF').value;
+    const nombreDelMiembro = document.getElementById('inputNombreDelMiembro').value.trim();
+    const apellidoDelMiembro = document.getElementById('inputApellidoDelMiembro').value.trim();
+    const busquedaFiltradoResultados = document.getElementById('busqueda-filtrado-resultados');
+
+    console.log('Selected Arbol:', selectArbolByF);
+    console.log('Nombre del Miembro:', nombreDelMiembro);
+    console.log('Apellido del Miembro:', apellidoDelMiembro);
+
+    // Clear existing results
+    busquedaFiltradoResultados.innerHTML = '';
+
+    // Find the selected arbol  
+    mainArbolList.getArboles().forEach((arbol) => {
+      if (arbol.getNombre() === selectArbolByF) {
+        console.log('Selected Arbol Object:', arbol);
+        // Iterate over members of the selected arbol and filter based on name and surname
+        arbol.getArbol().forEach((miembro) => {
+          const miembroNombre = miembro.getNombre().toLowerCase();
+          const miembroApellido = miembro.getApellido().toLowerCase();
+          if (
+            (nombreDelMiembro === '' || miembroNombre.includes(nombreDelMiembro.toLowerCase())) &&
+            (apellidoDelMiembro === '' || miembroApellido.includes(apellidoDelMiembro.toLowerCase()))
+          ) {
+            // Create a list item for each matching member
+            const li = document.createElement('li');
+            li.classList.add('list-group-item');
+            li.innerText = `Nombre: ${miembro.getNombre()}, Apellido: ${miembro.getApellido()}`;
+            busquedaFiltradoResultados.appendChild(li);
+          }
+        });
+      }
+    });
+  });
 });

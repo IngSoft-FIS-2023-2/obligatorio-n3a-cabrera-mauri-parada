@@ -19,4 +19,7 @@ export class ArbolList {
   getArboles() {
     return this.#arboles;
   }
+  getArbolByName(name) {
+    return this.arboles.find(arbol => arbol.getNombre() === name);
+  }
 }
