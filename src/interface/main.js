@@ -32,8 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
         arbol.add(newMiembro);
       }
     });
-
-    updateMiembrosDropdown();
+    //actualizacion de selectlist de miembros
+    const selectMiembro = document.getElementById('selectMiembro');
+    updateMiembrosDropdown(selectMiembro);
+    const selectMiembro2 = document.getElementById('selectMiembro2');
+    updateMiembrosDropdown(selectMiembro2);
     console.log(mainMiembroList);
     console.log(newMiembro.toString());
 
@@ -52,8 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       console.error('Please enter a valid tree name.');
     }
-    updateArbolesDropdown();
-    updateArbolesDropdownByF();
+
+    const selectArbol = document.getElementById('selectArbol');
+    updateArbolesDropdown(selectArbol);
+    const selectArbol2 = document.getElementById('selectArbolByF');
+    updateArbolesDropdown(selectArbol2);
   });
 
   //Creacion de Evento Cronologico
@@ -84,9 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
     arbolesList.appendChild(li);
   }
 
-  function updateArbolesDropdown() {
+  function updateArbolesDropdown(select) {
     // Clear existing options
-    const selectArbol = document.getElementById('selectArbol');
+    const selectArbol = select;
     selectArbol.innerHTML = '';
 
     // Add a default option
@@ -104,29 +110,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  function updateArbolesDropdownByF() {
+  function updateMiembrosDropdown(select) {
     // Clear existing options
-    const selectArbol = document.getElementById('selectArbolByF');
-    selectArbol.innerHTML = '';
-
-    // Add a default option
-    const defaultOption = document.createElement('option');
-    defaultOption.text = 'Seleccionar Árbol...';
-    defaultOption.value = '';
-    selectArbol.add(defaultOption);
-
-    // Add each member as an option
-    mainArbolList.getArboles().forEach((arbol) => {
-      const option = document.createElement('option');
-      option.text = arbol.toString();
-      option.value = arbol.getNombre(); // You can adjust the value as needed
-      selectArbol.add(option);
-    });
-  }
-
-  function updateMiembrosDropdown() {
-    // Clear existing options
-    const selectMiembro = document.getElementById('selectMiembro');
+    const selectMiembro = select;
     selectMiembro.innerHTML = '';
 
     // Add a default option
