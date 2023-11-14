@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const btnCrearMiembro = document.getElementById('btnNuevoMiembro');
   const btnCrearEvento = document.getElementById('btnNuevoEvento');
   const btnBusquedaFiltrado = document.getElementById('btnBusquedaFiltrado');
+  const btnVerFichaDeVida = document.getElementById('btnVerFichaDeVida');
+  const btnVerEventosCronologicos = document.getElementById('btnCronologiaEventos');
 
   //Creacion de Miembro
   btnCrearMiembro.addEventListener('click', () => {
@@ -129,6 +131,53 @@ document.addEventListener('DOMContentLoaded', function() {
       selectMiembro.add(option);
     });
   }
+
+
+  // Mostrar la ficha de vida cuando se hace clic en el botón
+  btnVerFichaDeVida.addEventListener('click', () => {
+    const selectMiembro2 = document.getElementById('selectMiembro2');
+    const selectedMiembroNombre = selectMiembro2.value;
+
+    // Buscar el miembro seleccionado
+    const selectedMiembro = mainMiembroList.getMiembroByName(selectedMiembroNombre);
+
+    // Mostrar la ficha de vida
+    if (selectedMiembro) {
+      document.getElementById('FDVNombre').innerText = `Nombre: ${selectedMiembro.getNombre()}`;
+      document.getElementById('FDVApellido').innerText = `Apellido: ${selectedMiembro.getApellido()}`;
+      document.getElementById('FDVEdad').innerText = `Edad: ${selectedMiembro.getEdad()}`;
+      document.getElementById('FDVFechaDeNacimiento').innerText = `Fecha de Nacimiento: ${selectedMiembro.getFechaNacimiento()}`;
+    } else {
+      console.error('Miembro no encontrado.');
+    }
+  });
+
+  //Ver Eventos cronológicos
+  btnVerEventosCronologicos.addEventListener('click', () => {
+    const selectMiembro2 = document.getElementById('selectMiembro2').value;
+    const eventosCronologicosList = document.getElementById('eventos-cronologicos-list');
+  
+    // Clear existing results
+    eventosCronologicosList.innerHTML = '';
+  
+    // Find the selected miembro
+    const selectedMiembro = mainMiembroList.getMiembroByName(selectMiembro2);
+  
+    if (selectedMiembro) {
+      // Iterate over events of the selected miembro
+      selectedMiembro.ordenarEventosPorFecha();
+      selectedMiembro.getEventos().forEach((evento) => {
+        // Create a list item for each event
+        const li = document.createElement('li');
+        li.classList.add('list-group-item');
+        li.innerText = `Descripción: ${evento.getDescripcion()}, Fecha: ${evento.getFecha()}`;
+        eventosCronologicosList.appendChild(li);
+      });
+    } else {
+      console.error('Selected miembro not found.');
+    }
+  });
+  
 
   //Busqueda y Filtrado
   btnBusquedaFiltrado.addEventListener('click', () => {

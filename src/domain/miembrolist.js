@@ -13,9 +13,17 @@ export class MiembroList {
     } else {
       throw new Error(`No se pudo agregar. 
         ${miembro.getNombre()} ya está en la lista.`);
-    }
+    };
   }
-
+  getMiembroByName(miembroNombre) {
+    for (const miembro of this.#miembros) {
+      if (miembro.getNombre() === miembroNombre) {
+        return miembro;
+      }
+    }
+    return null; // Retorna null si no se encuentra el miembro
+  }
+  
   getMiembros() {
     return this.#miembros;
   }
