@@ -41,7 +41,10 @@ document.addEventListener('DOMContentLoaded', function() {
     updateMiembrosDropdown(selectMiembro2);
     console.log(mainMiembroList);
     console.log(newMiembro.toString());
-
+    selectArbol.value = "";
+    inputNombre.value = "";
+    inputApellido.value = "";
+    inputFechaDeNacimiento.value = "";
   });
 
   //Creacion de Arbol
@@ -54,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
       mainArbolList.add(newArbol);
       console.log(mainArbolList);
       loadArbolList(newArbol);
+      inputNombreArbol.value = "";
     } else {
       console.error('Please enter a valid tree name.');
     }
@@ -81,6 +85,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     console.log(newEvento);
     console.log(mainMiembroList);
+    selectMiembro.value = "";
+    inputDescripcion.value = "";
+    inputFechaDeEvento.value = "";
   });
 
   function loadArbolList(newArbol) {
