@@ -134,31 +134,37 @@
     <!-- Ficha de Vida -->
     <div class="tab-pane fade" id="nav-ficha-vida" role="tabpanel" aria-labelledby="nav-ficha-vida-tab">
       <h1 class="display-6">Ficha de Información de Vida</h1>
-      <div class="col-12">
-        <label for="selectMiembro2" class="form-label">Seleccionar Miembro:</label>
-        <select id="selectMiembro2" class="form-select"></select>
-      </div>
-      <div class="col-12">
-        <label id="FDVNombre" class="form-label">Nombre:</label>
-      </div>
-      <div>
-        <label id="FDVApellido" class="form-label">Apellido:</label>
-      </div>
-      <div>
-        <label id="FDVEdad" class="form-label">Edad:</label>
-      </div>
-      <div>
-        <label id="FDVFechaDeNacimiento" class="form-label">Fecha de Nacimiento:</label>
-      </div>
-      <div class="col-12">
-        <button id="btnVerFichaDeVida" type="button" class="btn btn-primary">Ver Ficha de Vida</button>
-        <button id="btnCronologiaEventos" type="button" class="btn btn-primary">Cronología de eventos</button>
-      </div>
-        <h1 class="display-6">Eventos Cronológicos</h1>
+      <form class="row g-3">
+        <div class="col-12">
+          <label for="selectMiembro2" class="form-label">Seleccionar Miembro:</label>
+          <select id="selectMiembro2" class="form-select"></select>
+        </div>
+        <div class="col-12">
+          <label id="FDVNombre" class="form-label">Nombre:</label>
+        </div>
+        <div>
+          <label id="FDVApellido" class="form-label">Apellido:</label>
+        </div>
+        <div>
+          <label id="FDVEdad" class="form-label">Edad:</label>
+        </div>
+        <div>
+          <label id="FDVFechaDeNacimiento" class="form-label">Fecha de Nacimiento:</label>
+        </div>
+        <div class="col-12">
+          <button id="btnVerFichaDeVida" type="button" class="btn btn-primary">Ver Ficha de Vida</button>
+        </div>
+      </form>
+      <h1 class="display-6">Eventos Cronológicos</h1>
+      <form class="row g-3">
         <div>
             <ul id="eventos-cronologicos-list" class="list-group">
             </ul>
         </div>
+        <div class="col-12">
+          <button id="btnCronologiaEventos" type="button" class="btn btn-primary">Cronología de eventos</button>
+        </div>
+      </form>
     </div>
     <!-- Búsqueda y Filtrado -->
     <div class="tab-pane fade" id="nav-busqueda" role="tabpanel" aria-labelledby="nav-busqueda-tab">
