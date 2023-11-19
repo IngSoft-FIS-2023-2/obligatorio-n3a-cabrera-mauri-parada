@@ -67,7 +67,7 @@ Respecto a la estructura y organización de la aplicaction, lo separamos en 2 ca
 
 Para el diseño de la pagina utilizamos la librería Booststrap.
 
-Respecto al main, inicializamos las listas de miembrolist y arbol list para almacenar la informacion. A su vez, declaramos todos los botones de la aplicación como variables, para despues usarlas con los eventlistners, junto con la carga del DOM.
+Respecto al main, importamos todas las clases e inicializamos las listas de miembrolist y arbollist para almacenar la informacion. A su vez, declaramos todos los botones de la aplicación como variables, para despues usarlas con los eventlistners, junto con la carga del DOM.
 
 describiremos la codificación separando por las distintas secciones del menú de la aplicación:
 ### Agregar arbol
