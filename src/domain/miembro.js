@@ -1,3 +1,4 @@
+import { Evento } from "./evento.js";
 export class Miembro {
   #nombre
   #apellido
@@ -16,13 +17,22 @@ export class Miembro {
   getNombre() {
     return this.#nombre;
   }
+  setNombre(n){
+    this.#nombre = n;
+  }
   //retorna el apellido del miemebro
   getApellido() {
     return this.#apellido;
   }
+  setApellido(a){
+    this.#apellido = a;
+  }
   //retorna la fecha de nacimiento del miemebro
   getFechaNacimiento() {
     return this.#fechaNacimiento;
+  }
+  setFechaNacimiento(f){
+    this.#fechaNacimiento = f;
   }
   //setea el genero del miembro dependiendo de la seleccion del radiobutton
   setGenero(valor){
@@ -31,6 +41,9 @@ export class Miembro {
     }else{
       this.#genero = "Femenino";
     }
+  }
+  getGenero(){
+    return this.#genero;
   }
   //Retorna la lista de eventos del miembro
   getEventos() {
@@ -49,6 +62,7 @@ export class Miembro {
       return fechaA - fechaB;
     });
   }
+
   //calcula la edad del miembro tomando en cuenta la fecha de HOY y fecha de NACIMIENTO
   getEdad() {
     const fechaNacimiento = new Date(this.#fechaNacimiento);
@@ -56,14 +70,11 @@ export class Miembro {
     let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
     const mes = hoy.getMonth() - fechaNacimiento.getMonth();
   
-    if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
-      edad--;
-    }
-  
     return edad;
   }
   //retorna el miembro en texto
   toString() {
     return `Miembro: ${this.#nombre} ${this.#apellido} - Fecha de Nacimiento: ${this.#fechaNacimiento} - Género: ${this.#genero}`;
   }
+
 }

@@ -21,6 +21,12 @@ export class ArbolList {
   }
   //Retorna el arbol que se le pasa
   getArbolByName(name) {
-    return this.arboles.find(arbol => arbol.getNombre() === name);
+    for (const arbol of this.#arboles) {
+      if (arbol.getNombre() === name) {
+        return arbol;
+      }
+    }
+    return null; // Devuelve null si no se encuentra el árbol
   }
+  
 }

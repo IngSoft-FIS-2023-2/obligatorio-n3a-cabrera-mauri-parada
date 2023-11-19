@@ -10,6 +10,15 @@ export class Evento {
     getDescripcion() {
       return this.#descripcion;
     }
+
+    setDescripcion(desc){
+      this.#descripcion = desc;
+    }
+
+    setFecha(f){
+      this.#fecha = f;
+    }
+
     //Retorna la fecha del evento
     getFecha() {
       return this.#fecha;

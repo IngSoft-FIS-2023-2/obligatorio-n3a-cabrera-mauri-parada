@@ -9,7 +9,7 @@ export class Arbol {
       this.#listaMiembros = [];
     }
     //Setea el nombre del arbol
-    setNombre() {
+    setNombre(aNombre) {
       this.#nombre = aNombre;
     }
     //Retorna el nombre del arbol

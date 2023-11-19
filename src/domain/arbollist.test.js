@@ -43,5 +43,5 @@ test('Intentar Obtener Árbol Inexistente por Nombre', () => {
 
   // Intentar obtener un árbol que no existe debería devolver undefined
   const arbolObtenido = listaArboles.getArbolByName('Familia2');
-  expect(arbolObtenido).toBeUndefined();
+  expect(arbolObtenido).toEqual(null);
 });
