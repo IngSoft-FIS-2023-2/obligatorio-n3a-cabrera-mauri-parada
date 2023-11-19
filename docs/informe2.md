@@ -4,8 +4,7 @@
 Para la construccion de la aplicación lo primero en que nos pusimos a resolver fue el funcionamiento y relacion de objetos que estarian presentes en base al funcionamiento de la aplicacion que esperamos. Para ello tuvimos una reunión de brrainstorming para entender que usisarios y clases eran impresindibles para el almacenamiento de datos. Luego de la reuniñon llegamos que las clases necesarias serían las de: Miembro, Arbol, Evento, a su vez de crear arrayList para almacenar y vincular cada uno de ellas con su informacion.
 
 ### Diseño de clases
-**Clase Miembro**
-La clase Miembro se compone por los siguientes atributos:
+**Clase Miembro:** La clase Miembro se compone por los siguientes atributos:
 - Nombre
 - Apellido
 - Genero
@@ -15,18 +14,19 @@ Agregamos a su vez los metodos de:
 - agregarEvento: agregar un nuevo evento
 - getEdad: para calcular la edad en años en base a la fecha de nacimiento
 - Ademas de los getters y setters
-**Clase Arbol**
-La clase Arbol se compone por los siguientes atributos:
+
+**Clase Arbol:** La clase Arbol se compone por los siguientes atributos:
 - Su nombre para luego la busqueda e idenificación del arbol seleccionado
 - La lista de Miembros que la confomran
 Agregamos a su vez los metodos de:
 - getArbol: para conseguir la lista de los miembros que conforman el arbol
 - add: para agrregar un miembro al arbol
 - Ademas de los getters y setters
-**Clase Evento**
-La clase Evento se compone por los siguientes atributos:
+
+**Clase Evento:** La clase Evento se compone por los siguientes atributos:
 - Descripción
 - Fecha de incidencia
+
 **Listas creadas para las clases**
 Por último creamos los arrayList de cada uno de las clases para el almacenamiento de datos:
 - miembrolist
