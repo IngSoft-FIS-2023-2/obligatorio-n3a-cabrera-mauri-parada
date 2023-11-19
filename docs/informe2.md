@@ -9,6 +9,7 @@ Para la construccion de la aplicación lo primero en que nos pusimos a resolver 
 - Apellido
 - Genero
 - Lista de Eventos Cronologicos de la persona
+
 Agregamos a su vez los metodos de:
 - getEvento: para conseguir la lista de eventos cronologicos relacionada al miembro
 - agregarEvento: agregar un nuevo evento
@@ -18,6 +19,7 @@ Agregamos a su vez los metodos de:
 **Clase Arbol:** La clase Arbol se compone por los siguientes atributos:
 - Su nombre para luego la busqueda e idenificación del arbol seleccionado
 - La lista de Miembros que la confomran
+
 Agregamos a su vez los metodos de:
 - getArbol: para conseguir la lista de los miembros que conforman el arbol
 - add: para agrregar un miembro al arbol
