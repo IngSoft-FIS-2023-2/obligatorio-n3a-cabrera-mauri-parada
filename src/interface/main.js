@@ -22,12 +22,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputApellidoMiembro = document.getElementById('inputApellido').value;
     const inputFechaNacimiento = document.getElementById('inputFechaDeNacimiento').value;
     const inputMasculino = document.getElementById('gridMasculino').checked;
-
+    //creamos nuevo objeto con los datos ingresados
     const newMiembro = new Miembro(inputNombreMiembro,inputApellidoMiembro,inputFechaNacimiento);
     newMiembro.setGenero(inputMasculino);
     mainMiembroList.add(newMiembro);
     console.log(inputArbol);
-    
+    //seleccion del arbol ingresado y adicion de miembro
     mainArbolList.getArboles().forEach((arbol) => {
       if (arbol.getNombre() === inputArbol) {
         console.log(arbol);
@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateMiembrosDropdown(selectMiembro2);
     console.log(mainMiembroList);
     console.log(newMiembro.toString());
+    //Limpiamos los inputs
     selectArbol.value = "";
     inputNombre.value = "";
     inputApellido.value = "";
@@ -51,17 +52,19 @@ document.addEventListener('DOMContentLoaded', function() {
   btnCrearArbol.addEventListener('click', () => {
     const inputNombreArbol = document.getElementById('inputNombreArbol');
     const nombreArbolValue = inputNombreArbol.value.trim();
-
+    //si el nombre no esta vacio, creamos el arbol y lo agregamos a la lista de arboles
     if (nombreArbolValue !== '') {
+      //creamos nuevo objeto con los datos ingresados
       const newArbol = new Arbol(nombreArbolValue);
       mainArbolList.add(newArbol);
       console.log(mainArbolList);
+      //actualizacion de lista de arboles
       loadArbolList(newArbol);
       inputNombreArbol.value = "";
     } else {
       console.error('Please enter a valid tree name.');
     }
-
+    //actualizacion de dropdown de arboles
     const selectArbol = document.getElementById('selectArbol');
     updateArbolesDropdown(selectArbol);
     const selectArbol2 = document.getElementById('selectArbolByF');
@@ -75,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const FechaDeEvento = document.getElementById('inputFechaDeEvento').value;
 
     const newEvento = new Evento(Descripcion, FechaDeEvento);
-
+    //recorremos la lista de miembros hasta encontrar el miembor y agregamos el evento al mismo
     mainMiembroList.getMiembros().forEach((miembro) => {
       if (miembro.getNombre() === miembroDelEvento) {
         miembro.agregarEvento(newEvento);
@@ -85,11 +88,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     console.log(newEvento);
     console.log(mainMiembroList);
+    //limpiamos inputs
     selectMiembro.value = "";
     inputDescripcion.value = "";
     inputFechaDeEvento.value = "";
   });
 
+  //funcion que actualiza y muestra en la lista de arboles
   function loadArbolList(newArbol) {
     const arbolesList = document.getElementById('arboles-list-2');
 
@@ -99,38 +104,39 @@ document.addEventListener('DOMContentLoaded', function() {
     arbolesList.appendChild(li);
   }
 
+  //funcion que actualiza listas desplegables (parametro) con la lista de arboles
   function updateArbolesDropdown(select) {
     // Clear existing options
     const selectArbol = select;
     selectArbol.innerHTML = '';
 
-    // Add a default option
+    //agregamos el valor default
     const defaultOption = document.createElement('option');
     defaultOption.text = 'Seleccionar Árbol...';
     defaultOption.value = '';
     selectArbol.add(defaultOption);
 
-    // Add each member as an option
+    //gregamos en la lista con todos los arboles
     mainArbolList.getArboles().forEach((arbol) => {
       const option = document.createElement('option');
       option.text = arbol.toString();
-      option.value = arbol.getNombre(); // You can adjust the value as needed
+      option.value = arbol.getNombre();
       selectArbol.add(option);
     });
   }
-
+  //funcion que actualiza listas desplegables (parametro) con la lista de miembros
   function updateMiembrosDropdown(select) {
     // Clear existing options
     const selectMiembro = select;
     selectMiembro.innerHTML = '';
 
-    // Add a default option
+    //agregamos el valor default
     const defaultOption = document.createElement('option');
     defaultOption.text = 'Seleccionar Miembro...';
     defaultOption.value = '';
     selectMiembro.add(defaultOption);
 
-    // Add each member as an option
+    //agregamos la lista con todos los miembros
     mainMiembroList.getMiembros().forEach((miembro) => {
       const option = document.createElement('option');
       option.text = miembro.toString();
@@ -164,17 +170,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectMiembro2 = document.getElementById('selectMiembro2').value;
     const eventosCronologicosList = document.getElementById('eventos-cronologicos-list');
   
-    // Clear existing results
+    //limpiamos resultados 
     eventosCronologicosList.innerHTML = '';
   
-    // Find the selected miembro
+    //identificamos el miembro
     const selectedMiembro = mainMiembroList.getMiembroByName(selectMiembro2);
   
     if (selectedMiembro) {
-      // Iterate over events of the selected miembro
+      //ordenamos los eventos del miembro
       selectedMiembro.ordenarEventosPorFecha();
+      //iteramos por todos los eventos del miembro
       selectedMiembro.getEventos().forEach((evento) => {
-        // Create a list item for each event
+        //mostramos en la lista todos los eventos iterados
         const li = document.createElement('li');
         li.classList.add('list-group-item');
         li.innerText = `Descripción: ${evento.getDescripcion()}, Fecha: ${evento.getFecha()}`;
@@ -188,6 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //Busqueda y Filtrado
   btnBusquedaFiltrado.addEventListener('click', () => {
+    //guardamos los valores de busqueda ingresados
     const selectArbolByF = document.getElementById('selectArbolByF').value;
     const nombreDelMiembro = document.getElementById('inputNombreDelMiembro').value.trim();
     const apellidoDelMiembro = document.getElementById('inputApellidoDelMiembro').value.trim();
@@ -197,14 +205,14 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Nombre del Miembro:', nombreDelMiembro);
     console.log('Apellido del Miembro:', apellidoDelMiembro);
 
-    // Clear existing results
+    //limpiamos resultados de busqueda anterior
     busquedaFiltradoResultados.innerHTML = '';
 
-    // Find the selected arbol  
+    //iteramos hasta encontrar el arbol seleccionado
     mainArbolList.getArboles().forEach((arbol) => {
       if (arbol.getNombre() === selectArbolByF) {
         console.log('Selected Arbol Object:', arbol);
-        // Iterate over members of the selected arbol and filter based on name and surname
+        //iteramos sobre la lista de miembros y seleccionamos aquellos miembros con igual nombre o apellido
         arbol.getArbol().forEach((miembro) => {
           const miembroNombre = miembro.getNombre().toLowerCase();
           const miembroApellido = miembro.getApellido().toLowerCase();
@@ -212,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
             (nombreDelMiembro === '' || miembroNombre.includes(nombreDelMiembro.toLowerCase())) &&
             (apellidoDelMiembro === '' || miembroApellido.includes(apellidoDelMiembro.toLowerCase()))
           ) {
-            // Create a list item for each matching member
+            //mostramos resultados en la lista
             const li = document.createElement('li');
             li.classList.add('list-group-item');
             li.innerText = `Nombre: ${miembro.getNombre()}, Apellido: ${miembro.getApellido()}`;

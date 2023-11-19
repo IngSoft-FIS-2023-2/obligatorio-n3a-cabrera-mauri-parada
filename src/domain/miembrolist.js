@@ -4,7 +4,7 @@ export class MiembroList {
   constructor() {
     this.#miembros = [];
   }
-
+  //Agrega un miembro y evalua si el miembro que se quiere crear ya existe
   add(miembro) {
     const nombreMiembroInList = this.#miembros.some((m) => m.getNombre() == miembro.getNombre());
     const apellidoMiembroInList = this.#miembros.some((m) => m.getApellido() == miembro.getApellido());
@@ -17,7 +17,7 @@ export class MiembroList {
         ${miembro.getNombre()} ya está en la lista.`);
     };
   }
-
+  //busca miembros por nombre y lo retorna
   getMiembroByName(miembroNombre) {
     for (const miembro of this.#miembros) {
       if (miembro.getNombre() === miembroNombre) {
@@ -26,7 +26,7 @@ export class MiembroList {
     }
     return null; // Retorna null si no se encuentra el miembro
   }
-  
+  //retorn la lista de miembros
   getMiembros() {
     return this.#miembros;
   }
