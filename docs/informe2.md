@@ -29,14 +29,13 @@ Agregamos a su vez los metodos de:
 - Descripción
 - Fecha de incidencia
 
-**Listas creadas para las clases**
-Por último creamos los arrayList de cada uno de las clases para el almacenamiento de datos:
+**Listas creadas para las clases:** Por último creamos los arrayList de cada uno de las clases para el almacenamiento de datos:
 - miembrolist
 - arbollist
 
 ### Logica de la aplicacion
-La aplicación la diseñamos con el concepto de que el usuarion que entre pueda crear los arboles genealógicos que desee y una vez creados los arboles la creacion de los miembros asociandolos al arbol correspondiente. 
-El usuario al momento de crear añadir un miembro lo asocia al arbol al que pertenece.
+La aplicación la diseñamos con el concepto de que el usuarion que entre pueda crear los arboles genealógicos que desee y una vez creados los arboles la creacion de los miembros asociandolos al arbol correspondiente. El usuario al momento de crear añadir un miembro lo asocia al arbol al que pertenece.
+
 Luego el usuario tiene la posibilidad de agregar Eventos a cualquier miembro que quiera y por último tiene la  visualización de información de vida de los miembros con la posibilidad de ver todos sus eventos cronologicos.
 Tambièn agregamos la posibilidad de busqueda de miembros familiares dentro de los arboles genealógicos, por nombre o apellido.
 
@@ -50,6 +49,7 @@ Por último, empezamos con los test unitarios y validaciones con los estándares
 
 ## Interfaz de usuario
 Para el diseño de la interfaz, tuvimos varias ideas de las cuales predomino una que fue la de ordenar las distintas funciones de la aplicación en distintas paginas controladas por un menu en el cual el usuario sepa que esta haciendo en la pantalla que esta parado.
+
 ### Diseño con navbar
 El navbar es fundamental para la estructura de la aplicación ya que aqui el usuario entiende las distintas aplicaciones y aciones que puede ejercer en la misma. En la Navbar esta diseñado con las siguientes opciones:
 - Agregar Arbol: creación de arbol genealogico.
@@ -63,22 +63,42 @@ El navbar es fundamental para la estructura de la aplicación ya que aqui el usu
 Principalmente, el usuario puede navegar por las diferentes secciones y funcionalidades de la aplicación de manera libre usando las distintas funciones. También ,el uso del menu facilita a la experiencia del usuraio sin cargar de información al mismo.
 
 ## Codificación
-Describiremos la codificación separando por seccion del menú de la aplicación:
-### Agregar arbol
+Respecto a la estructura y organización de la aplicaction, lo separamos en 2 carpetas, Domain e Interfaz. En el Domain centralizamos todas las clases con sus respectivos metodos y en la carpeta de Interfaz centralizamos el HTML, CSS y el main en el cual corre la apliciónn. 
 
-### Lista de arboles
+Para el diseño de la pagina utilizamos la librería Booststrap.
+
+Respecto al main, inicializamos las listas de miembrolist y arbol list para almacenar la informacion. A su vez, declaramos todos los botones de la aplicación como variables, para despues usarlas con los eventlistners, junto con la carga del DOM.
+
+describiremos la codificación separando por las distintas secciones del menú de la aplicación:
+### Agregar arbol
+Con la accion del click del boton, creamos un nuevo objeto de Arbol y los creamos con el nombre ingresado en la pantalla. Si el nombre esta repetido salta un error y le pide al usuario cargarlo de nuevo ya que el arbol es existente.
+
+A su vez, en la misma accion actualizamos la lista de arboles en la seccion "lista de Arboles" y en los inputs de lista desplegables.
 
 ### Agregar miembro
+En esta seccion, creamos un nuevo objeto de Miembro y lo creamos con los datos ingresados y lo añadimos al arbol para que se vaya formando la familia.
+Por último, actualizamos todas las listas desplegables con los nuevos miembros. 
 
 ### Agregar evento cronologico
+En esta seccion, creamos un nuevo objeto con los datos ingresados por el usuario. Cabe destacar que al momento de la creación filtramos y buscamos al miembro que el usuario seleccionó para ya añadirle el evento dentro del objeto miembro. En el mismo momento ordenamos la lista de eventos por fecha.
 
 ### Ficha de vida
+En esta seccion, con el click en el boton "Ver Ficha de Vida" se mostraran los datos del miembro seleccionado anteriormente por el usuario.
+
+También, con la acción de click en el botón "Ver Cronología de Eventos" mostraremos la lista de eventos cronologicos relacionada con el miembro seleccionado ordenada por fecha de ocurrencia.
 
 ### Busqueda y filtrado
+En esta sección, con el click en "Buscar" tomaremos los datos y recorremos la lista de arboles para identificar el arbol que se seleccionó y luego recorremos dentro del mismo arbol la lista de miembros que la conforman y evaluamos si coinciden con el nombre y apellido ingresado por el usuario.
 
+Luego, mostramos todos los resultados (miembros) que tengan el mismo nombre, appelido o ambos que ingreso el usuario en la busqueda.
 
 ## Test unitario
 
 
 ## Reflexión
 ### Reflexión Joaquín Cabrera
+Personalmente, esta segunda etapa del obligatorio fue más exigente que la primera y donde mas aprendizage me llevo ya que fue aqui donde pusimos en practica todo lo que dimos en el año. A su vez, fue una instancia fundamental para reforzar todos los conocimientos que pusimos en práctica en la primera entrega.
+
+Cabe destacar que en esta segunda entrega tuvimos una etapa grande de investigación y desarrollo importante que disfrute y aprendí mucho ya que muchas cosas que no sabia las pude aprender y entender y muchas otras en las que estaba olvidado pude refrescarlas como por ejemplo javascript.
+
+Disfrute mucho esta entrega, es una instancia de gran aprendizaje y satisfacción, ver algo que arranca como idea e implementarla es gratificante.
