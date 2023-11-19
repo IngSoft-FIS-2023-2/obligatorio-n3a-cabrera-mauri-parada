@@ -2,33 +2,34 @@
 
 ## Construcción
 Para la construccion de la aplicación lo primero en que nos pusimos a resolver fue el funcionamiento y relacion de objetos que estarian presentes en base al funcionamiento de la aplicacion que esperamos. Para ello tuvimos una reunión de brrainstorming para entender que usisarios y clases eran impresindibles para el almacenamiento de datos. Luego de la reuniñon llegamos que las clases necesarias serían las de: Miembro, Arbol, Evento, a su vez de crear arrayList para almacenar y vincular cada uno de ellas con su informacion.
+
 ### Diseño de clases
 La clase Miembro se compone por los siguientes atributos:
-    - Nombre
-    - Apellido
-    - Genero
-    - Lista de Eventos Cronologicos de la persona
-        - Agregamos a su vez los metodos de:
-        - getEvento: para conseguir la lista de eventos cronologicos relacionada al miembro
-        - agregarEvento: agregar un nuevo evento
-        - getEdad: para calcular la edad en años en base a la fecha de nacimiento
-        - Ademas de los getters y setters
+- Nombre
+- Apellido
+- Genero
+- Lista de Eventos Cronologicos de la persona
+Agregamos a su vez los metodos de:
+- getEvento: para conseguir la lista de eventos cronologicos relacionada al miembro
+- agregarEvento: agregar un nuevo evento
+- getEdad: para calcular la edad en años en base a la fecha de nacimiento
+- Ademas de los getters y setters
 
 La clase Arbol se compone por los siguientes atributos:
-    - Su nombre para luego la busqueda e idenificación del arbol seleccionado
-    - La lista de Miembros que la confomran
-        - Agregamos a su vez los metodos de:
-        - getArbol: para conseguir la lista de los miembros que conforman el arbol
-        - add: para agrregar un miembro al arbol
-        - Ademas de los getters y setters
+- Su nombre para luego la busqueda e idenificación del arbol seleccionado
+- La lista de Miembros que la confomran
+Agregamos a su vez los metodos de:
+- getArbol: para conseguir la lista de los miembros que conforman el arbol
+- add: para agrregar un miembro al arbol
+- Ademas de los getters y setters
 
 La clase Evento se compone por los siguientes atributos:
-    - Descripción
-    - Fecha de incidencia
+- Descripción
+- Fecha de incidencia
 
 Por último creamos los arrayList de cada uno de las clases para el almacenamiento de datos:
-    - miembrolist
-    - arbollist
+- miembrolist
+- arbollist
 
 ### Logica de la aplicacion
 La aplicación la diseñamos con el concepto de que el usuarion que entre pueda crear los arboles genealógicos que desee y una vez creados los arboles la creacion de los miembros asociandolos al arbol correspondiente. 
@@ -38,8 +39,10 @@ Tambièn agregamos la posibilidad de busqueda de miembros familiares dentro de l
 
 ### Sucesión de eventos
 Respecto a como se fue dando la construcción, primero dedicamos al diseño de las clases para el uso de la aplicación, esta etapa fue de la que mas tiempo nos consumio ya que era necesaria para todo lo que nos esperaría luego con el diseño del html y lógica de la aplicación. 
+
 Una vez con el esquema de clases implementado, armamos el HTML para la aplicación en la cual fue un proceso bastante mas ligero al anterior ya que teniamos un entendimiento mas profundo de lo que estabamos programando.
 Luego, arrancamos con la logica e implementación de la funcionalidad de la aplicación con varios testeos para ver el uso de la misma.
+
 Por último, empezamos con los test unitarios y validaciones con los estándares para que la aplicación cumpla con los requisitos.
 
 ## Interfaz de usuario
