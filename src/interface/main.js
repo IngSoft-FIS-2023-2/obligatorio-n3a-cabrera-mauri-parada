@@ -22,6 +22,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputApellidoMiembro = document.getElementById('inputApellido').value;
     const inputFechaNacimiento = document.getElementById('inputFechaDeNacimiento').value;
     const inputMasculino = document.getElementById('gridMasculino').checked;
+    const inputFemenino = document.getElementById('gridFemenino').checked;
+    //se fija que no haya datos en blanco
+    if ((!inputMasculino && !inputFemenino) || (!inputArbol) || (!inputNombreMiembro) ||
+        (!inputApellidoMiembro) || (!inputFechaNacimiento) ) {
+      alert('Por favor, rellene todos los campos.');
+      return;
+    }
     //creamos nuevo objeto con los datos ingresados
     const newMiembro = new Miembro(inputNombreMiembro,inputApellidoMiembro,inputFechaNacimiento);
     newMiembro.setGenero(inputMasculino);
@@ -77,6 +84,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const Descripcion = document.getElementById('inputDescripcion').value;
     const FechaDeEvento = document.getElementById('inputFechaDeEvento').value;
 
+    //se fija que no haya datos en blanco
+    if ((!miembroDelEvento) || (!Descripcion) || (!FechaDeEvento)) {
+      alert('Por favor, rellene todos los campos.');
+      return;
+    }
     const newEvento = new Evento(Descripcion, FechaDeEvento);
     //recorremos la lista de miembros hasta encontrar el miembor y agregamos el evento al mismo
     mainMiembroList.getMiembros().forEach((miembro) => {
@@ -150,9 +162,12 @@ document.addEventListener('DOMContentLoaded', function() {
   btnVerFichaDeVida.addEventListener('click', () => {
     const selectMiembro2 = document.getElementById('selectMiembro2');
     const selectedMiembroNombre = selectMiembro2.value;
+    const eventosCronologicosList = document.getElementById('eventos-cronologicos-list');
+  
 
     // Buscar el miembro seleccionado
     const selectedMiembro = mainMiembroList.getMiembroByName(selectedMiembroNombre);
+    eventosCronologicosList.innerHTML = '';
 
     // Mostrar la ficha de vida
     if (selectedMiembro) {
@@ -160,6 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('FDVApellido').innerText = `Apellido: ${selectedMiembro.getApellido()}`;
       document.getElementById('FDVEdad').innerText = `Edad: ${selectedMiembro.getEdad()}`;
       document.getElementById('FDVFechaDeNacimiento').innerText = `Fecha de Nacimiento: ${selectedMiembro.getFechaNacimiento()}`;
+      document.getElementById('FDVGenero').innerText = `Género: ${selectedMiembro.getGenero()}`;
     } else {
       console.error('Miembro no encontrado.');
     }
