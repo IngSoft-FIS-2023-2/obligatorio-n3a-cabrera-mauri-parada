@@ -1,0 +1,29 @@
+[33mcommit 6fd93b2d2b88a8476b84d052580be5b7b9fd1a58[m[33m ([m[1;36mHEAD -> [m[1;32mcabrera[m[33m, [m[1;31morigin/cabrera[m[33m)[m
+Author: “Joaquin <“[cabrerabonino@gmail.com]”>
+Date:   Thu Nov 2 20:56:06 2023 -0300
+
+    Agregamos clases: Arbol, Miembro. Agregamos listas: miembrolist, arbollist. Agregamos: index.html
+
+[33mcommit 8305960734400f06b4cda0ee85e3612c19b679af[m[33m ([m[1;32mdevelop[m[33m)[m
+Author: “Joaquin <“[cabrerabonino@gmail.com]”>
+Date:   Wed Oct 4 23:20:13 2023 -0300
+
+    Agregamos las secciones de User Persona & Elicitación
+
+[33mcommit 5306b398c7a34f88c9471e7b404b269620111c15[m
+Author: “Joaquin <“[cabrerabonino@gmail.com]”>
+Date:   Wed Oct 4 23:12:42 2023 -0300
+
+    Agregamos la seccion versionado
+
+[33mcommit a716b4e3e80b5b6af90e27d7754f5761bc94fdb4[m
+Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+Date:   Sat Sep 23 01:42:04 2023 +0000
+
+    Add online IDE url
+
+[33mcommit ec0fc03a8e9d1298a24254843f71dd154c7e7e26[m
+Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+Date:   Sat Sep 23 01:42:02 2023 +0000
+
+    Initial commit
