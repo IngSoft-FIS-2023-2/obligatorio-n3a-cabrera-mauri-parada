@@ -44,10 +44,8 @@ RF7 : Debe restringirse el acceso de ciertos alimentos a algunos niños
 
 | ID Caso Prueba | Fecha      | Tester  | Resultado obtenido                             | Estado | Ids Defectos   |
 |----------------|------------|---------|-------------------------------------------------|--------|------------------------------------------------------|
-| CP 1           | 24/11/2023 | Diego   | Se agrega el menú                               | No Pasa   | Deberia restringirse el acceso de ciertos alimentos a algunos niños. En este caso carne a un vegetariano                                       |                                     
-
-| CP 2          | 25/11/2023 | Joaquin M   | Se agrega el menú                               | No Pasa   | No deberia dejar agregar al menu elementos con nombre vacio                                            |   
-
+| CP 1           | 24/11/2023 | Diego   | Se agrega el menú                               | No Pasa   | Deberia restringirse el acceso de ciertos alimentos a algunos niños. En este caso carne a un vegetariano|
+| CP 2          | 25/11/2023 | Joaquin M   | Se agrega el menú                               | No Pasa   | No deberia dejar agregar al menu elementos con nombre vacio|
 | CP 3         | 25/11/2023 | Joaquin C   | Se agrega el menú                               | Pasa   | No aplica |    
 
 | CP 4       | 24/11/2023 | Diego   | Se agrega el menú                               | No Pasa   | No deberia dejar agregar al menu alimentos sin ingredientes| 
