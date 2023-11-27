@@ -93,7 +93,12 @@ En esta sección, con el click en "Buscar" tomaremos los datos y recorremos la l
 Luego, mostramos todos los resultados (miembros) que tengan el mismo nombre, appelido o ambos que ingreso el usuario en la busqueda.
 
 ## Test unitario
+Respecto al testing unitario realizamos pruebas a lo largo de todos las clases creadas cubriendo el 100% de los métodos en cada una de ellas. A su vez, realizamos test unitarios en los ArrayList creados de; miembros y arboles, en el 100% de sus métodos cubriendolos en su totalidad.
 
+Para el testing unitario de cada clase y Arraylist creamos distintos archivos .test.js para el adecuado testeo del código.
+
+A continuación adjuntamos una captura de los resultados de los mismos:
+![captura de resultados del test unitario](image.png)
 
 ## Reflexión
 ### Reflexión Joaquín Cabrera
