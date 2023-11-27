@@ -15,29 +15,16 @@ RF7 : Debe restringirse el acceso de ciertos alimentos a algunos niños
 
 | Caso de prueba |  Nombre          | Dia de la semana                                    | Precio             | Tipo                       | Ingredientes      |Resultado esperado                           | Clases de equivalencia cubiertas      
 |-----------------|-----------------------|------------------------------------------------------|------------|--------------------------------------------------|--------------------|-----------------------------------------------|----------------------------------------|
-| CP 1       | Hamburguesa      | Lunes             | 200       | Vegetariano         | Carne picada,Lechuga,Tomate      Carne picada,Lechuga,Tomate     |Error al agregar/editar al menú      | Falta esto                            |
-
-
-| CP 2      | `<vacio>`      | Lunes             | 200       | Regular        | Carne picada,Lechuga,Tomate        |Error al agregar/editar al menú      | Falta esto                            |
-
-| CP 3       | Hamburguesa      | Lunes             | 200       | Regular         | Carne picada,Lechuga,Tomate          |Agregado/editado al menú correctamente     | Falta esto                            |
-
-| CP 4      | Hamburguesa      | Lunes             | 200       | Regular         |  `<vacio>`     |Error al agregar/editar al menú       | Falta esto                            |
-
-| CP 5      | Hamburguesa      | Lunes             | `<vacio>`      | Regular         | Carne picada,Lechuga,Tomate     |Error al agregar/editar al menú       | Falta esto                            |
-
-| CP 6      | Hamburguesa      | Lunes             | 200       | Celiaco      |  Carne picada,Lechuga,Tomate, pan     |Error al agregar/editar al menú       | Falta esto                            |
-
-| CP 7       | .,.     | Martes            | 200       | Regular         | Carne picada,Lechuga,Tomate          |Error al agregar/editar al menú        | Falta esto                            |
-
-| CP 8      | Pizza    | Viernes            | 200       | Regular          | harina, salsa tomate     |Agregado/editado al menú correctamente      | Falta esto                            |
-
-| CP 9      | Hamburguesa      | Lunes             | 0      | Regular         | Carne picada,Lechuga,Tomate     |Error al agregar/editar al menú       | Falta esto   
-
+| CP 1       | Hamburguesa      | Lunes             | 200       | Vegetariano         | Carne picada,Lechuga,Tomate      Carne picada,Lechuga,Tomate     |Error al agregar/editar al menú      | Falta esto|
+| CP 2      | `<vacio>`      | Lunes             | 200       | Regular        | Carne picada,Lechuga,Tomate        |Error al agregar/editar al menú      | Falta esto|
+| CP 3       | Hamburguesa      | Lunes             | 200       | Regular         | Carne picada,Lechuga,Tomate          |Agregado/editado al menú correctamente     | Falta esto|
+| CP 4      | Hamburguesa      | Lunes             | 200       | Regular         |  `<vacio>`     |Error al agregar/editar al menú       | Falta esto|
+| CP 5      | Hamburguesa      | Lunes             | `<vacio>`      | Regular         | Carne picada,Lechuga,Tomate     |Error al agregar/editar al menú       | Falta esto|
+| CP 6      | Hamburguesa      | Lunes             | 200       | Celiaco      |  Carne picada,Lechuga,Tomate, pan     |Error al agregar/editar al menú       | Falta esto|
+| CP 7       | .,.     | Martes            | 200       | Regular         | Carne picada,Lechuga,Tomate          |Error al agregar/editar al menú        | Falta esto|
+| CP 8      | Pizza    | Viernes            | 200       | Regular          | harina, salsa tomate     |Agregado/editado al menú correctamente      | Falta esto|
+| CP 9      | Hamburguesa      | Lunes             | 0      | Regular         | Carne picada,Lechuga,Tomate     |Error al agregar/editar al menú       | Falta esto|
 | CP 10     | Hamburguesa      | Lunes             | -10      | Regular         | Carne picada,Lechuga,Tomate     |Error al agregar/editar al menú       | Falta esto   
-
-
-
 
 
 ### Resultados de casos de prueba
@@ -46,21 +33,14 @@ RF7 : Debe restringirse el acceso de ciertos alimentos a algunos niños
 |----------------|------------|---------|-------------------------------------------------|--------|------------------------------------------------------|
 | CP 1           | 24/11/2023 | Diego   | Se agrega el menú                               | No Pasa   | Deberia restringirse el acceso de ciertos alimentos a algunos niños. En este caso carne a un vegetariano|
 | CP 2          | 25/11/2023 | Joaquin M   | Se agrega el menú                               | No Pasa   | No deberia dejar agregar al menu elementos con nombre vacio|
-| CP 3         | 25/11/2023 | Joaquin C   | Se agrega el menú                               | Pasa   | No aplica |    
-
-| CP 4       | 24/11/2023 | Diego   | Se agrega el menú                               | No Pasa   | No deberia dejar agregar al menu alimentos sin ingredientes| 
-
-| CP 5      | 25/11/2023 | Joaquin M  | Se agrega el menú                               | No Pasa   | No deberia dejar agregar al menu elementos con precio vacio  | 
-
-| CP 6    | 25/11/2023 | Joaquin C | Se agrega el menú                               | No Pasa   | Deberia restringirse el acceso de ciertos alimentos a algunos niños. En este caso pan a un celiaco |
-
-| CP 7    | 24/11/2023 | Diego | Se agrega el menú                               | No Pasa   | No deberia permitirse el uso de simbolos en el nombre de la comida |
-
+| CP 3         | 25/11/2023 | Joaquin C   | Se agrega el menú                               | Pasa   | No aplica |
+| CP 4       | 24/11/2023 | Diego   | Se agrega el menú                               | No Pasa   | No deberia dejar agregar al menu alimentos sin ingredientes|
+| CP 5      | 25/11/2023 | Joaquin M  | Se agrega el menú                               | No Pasa   | No deberia dejar agregar al menu elementos con precio vacio|
+| CP 6    | 25/11/2023 | Joaquin C | Se agrega el menú                               | No Pasa   | Deberia restringirse el acceso de ciertos alimentos a algunos niños. En este caso pan a un celiaco|
+| CP 7    | 24/11/2023 | Diego | Se agrega el menú                               | No Pasa   | No deberia permitirse el uso de simbolos en el nombre de la comida|
 | CP 8    | 25/11/2023 | Joaquin M| Se agrega el menú                               | Pasa   | No aplica |
-
-| CP 9   | 25/11/2023 | Joaquin C| Se agrega el menú                               | No Pasa   | No deberia permitirse comidas en el menú a precio 0 |
-
-| CP 10   | 25/11/2023 | Joaquin M| Se agrega el menú                               | No Pasa   | No deberia permitirse comidas en el menú a precio negativo |
+| CP 9   | 25/11/2023 | Joaquin C| Se agrega el menú                               | No Pasa   | No deberia permitirse comidas en el menú a precio 0|
+| CP 10   | 25/11/2023 | Joaquin M| Se agrega el menú                               | No Pasa   | No deberia permitirse comidas en el menú a precio negativo|
 
 ### Testing exploratorio
 
