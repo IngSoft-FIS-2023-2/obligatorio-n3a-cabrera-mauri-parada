@@ -93,7 +93,7 @@ vacio, se agrega menu con precio vacio, se agrega menu con ingredientes vacios, 
 
 ## Informe de calidad del sistema
 
-Después de examinar detenidamente el sistema "COMEST" y completar las pruebas necesarias durante la fase de evaluación, concluimos que el prototipo no satisface los requisitos establecidos en los RF (Requisitos Funcionales) en su totalidad. Durante el testing se identificaron varios defectos que pueden afectar el funcionamiento correcto de la apliación. Por otro lado, algunos requisitos funcionales no estaban presentes como es el caso de el RF7 ( Debe restringirse el acceso de ciertos alimentos a algunos niños)
+Después de examinar detenidamente la aplicacion y completar las pruebas necesarias durante la fase de evaluación, concluimos que el prototipo no satisface los requisitos establecidos en los RF (Requisitos Funcionales) en su totalidad. Durante el testing se identificaron varios defectos que pueden afectar el funcionamiento correcto de la apliación. Por otro lado, algunos requisitos funcionales no estaban presentes como es el caso de el RF7 ( Debe restringirse el acceso de ciertos alimentos a algunos niños)
 
 
 ## Reflexión
