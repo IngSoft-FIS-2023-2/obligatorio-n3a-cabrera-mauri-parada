@@ -102,3 +102,10 @@ Personalmente, esta segunda etapa del obligatorio fue más exigente que la prime
 Cabe destacar que en esta segunda entrega tuvimos una etapa grande de investigación y desarrollo importante que disfrute y aprendí mucho ya que muchas cosas que no sabia las pude aprender y entender y muchas otras en las que estaba olvidado pude refrescarlas como por ejemplo javascript.
 
 Disfrute mucho esta entrega, es una instancia de gran aprendizaje y satisfacción, ver algo que arranca como idea e implementarla es gratificante.
+
+### Reflexión Diego Parada
+
+
+Durante el desarrollo de este proyecto, he experimentado un significativo avance en la aplicación práctica de los conceptos fundamentales de desarrollo y testing. Este proceso no solo ha fortalecido mi comprensión sobre la correcta utilización de dichas practicas, sino que también me ha proporcionado una visión integral de cómo abordar un proyecto desde sus fases iniciales hasta la implementación final.
+
+Esta experiencia ha sido valiosa para consolidar los conocimientos adquiridos en clase y para aprender a aplicarlos de manera efectiva en entornos de proyectos reales. Me ha permitido apreciar la importancia de una perspectiva integral en el desarrollo de software, donde tanto el diseño y la implementación como las prácticas de testing son componentes cruciales para el éxito del proyecto. Este trabajo ha sido una oportunidad enriquecedora para crecer tanto técnica como colaborativamente en el mundo del desarrollo de software.
