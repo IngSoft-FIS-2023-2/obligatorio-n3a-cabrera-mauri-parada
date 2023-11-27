@@ -1,30 +1,37 @@
 # Informe de testing 
-Proyecto asignado: [https://github.com/IngSoft-FIS-2023-2/obligatorio-n3a-silvachorocuenca]
+[Proyecto asignado](https://github.com/IngSoft-FIS-2023-2/obligatorio-n3a-silvachorocuenca)
+
 
 ## Test de sistema
 Para realizar el testing de la solución se utilizara la tecnica
 participación de equivalencias.
 
-Partición de equivalencia:
+**Partición de equivalencia:**
 RF3 : Guardar registro de compras mensuales.
 RF4 : Publicar y editar la planificación semanal del menú.
 RF5 : Acceder a la información de los platos reservados del día/semana.
 RF7 : Debe restringirse el acceso de ciertos alimentos a algunos niños
 
+| Entrada/Variable | Clases válidas                              | Clases inválidas                               |
+|------------------|---------------------------------------------|-------------------------------------------------|
+| Nombre           | No vacío (1)                                | Vacío (2), Caracteres especiales (9)|
+| Precio      | No vacío (3)                                | Vacío (4), Número negativo (5), Precio 0 (10)|
+| Ingredientes           | No vacío (7)                      | Vacío (8), No correspondiente con Tipo (11)|
+
 ### Casos de prueba
 
 | Caso de prueba |  Nombre          | Dia de la semana                                    | Precio             | Tipo                       | Ingredientes      |Resultado esperado                           | Clases de equivalencia cubiertas      
 |-----------------|-----------------------|------------------------------------------------------|------------|--------------------------------------------------|--------------------|-----------------------------------------------|----------------------------------------|
-| CP 1       | Hamburguesa      | Lunes             | 200       | Vegetariano         | Carne picada,Lechuga,Tomate      Carne picada,Lechuga,Tomate     |Error al agregar/editar al menú      | Falta esto|
-| CP 2      | `<vacio>`      | Lunes             | 200       | Regular        | Carne picada,Lechuga,Tomate        |Error al agregar/editar al menú      | Falta esto|
-| CP 3       | Hamburguesa      | Lunes             | 200       | Regular         | Carne picada,Lechuga,Tomate          |Agregado/editado al menú correctamente     | Falta esto|
-| CP 4      | Hamburguesa      | Lunes             | 200       | Regular         |  `<vacio>`     |Error al agregar/editar al menú       | Falta esto|
-| CP 5      | Hamburguesa      | Lunes             | `<vacio>`      | Regular         | Carne picada,Lechuga,Tomate     |Error al agregar/editar al menú       | Falta esto|
-| CP 6      | Hamburguesa      | Lunes             | 200       | Celiaco      |  Carne picada,Lechuga,Tomate, pan     |Error al agregar/editar al menú       | Falta esto|
-| CP 7       | .,.     | Martes            | 200       | Regular         | Carne picada,Lechuga,Tomate          |Error al agregar/editar al menú        | Falta esto|
-| CP 8      | Pizza    | Viernes            | 200       | Regular          | harina, salsa tomate     |Agregado/editado al menú correctamente      | Falta esto|
-| CP 9      | Hamburguesa      | Lunes             | 0      | Regular         | Carne picada,Lechuga,Tomate     |Error al agregar/editar al menú       | Falta esto|
-| CP 10     | Hamburguesa      | Lunes             | -10      | Regular         | Carne picada,Lechuga,Tomate     |Error al agregar/editar al menú       | Falta esto   
+| CP 1       | Hamburguesa      | Lunes             | 200       | Vegetariano         | Carne picada,Lechuga,Tomate     |Error al agregar/editar al menú      | 1,3,7,11|
+| CP 2      | `<vacio>`      | Lunes             | 200       | Regular        | Carne picada,Lechuga,Tomate        |Error al agregar/editar al menú      | 2,3,7|
+| CP 3       | Hamburguesa      | Lunes             | 200       | Regular         | Carne picada,Lechuga,Tomate          |Agregado/editado al menú correctamente     | 1,3,7|
+| CP 4      | Hamburguesa      | Lunes             | 200       | Regular         |  `<vacio>`     |Error al agregar/editar al menú       | 1,3,8|
+| CP 5      | Hamburguesa      | Lunes             | `<vacio>`      | Regular         | Carne picada,Lechuga,Tomate     |Error al agregar/editar al menú       | 1,4,7|
+| CP 6      | Hamburguesa      | Lunes             | 200       | Celiaco      |  Carne picada,Lechuga,Tomate, pan     |Error al agregar/editar al menú       | 1,3,7,11|
+| CP 7       | .,.     | Martes            | 200       | Regular         | Carne picada,Lechuga,Tomate          |Error al agregar/editar al menú        | 9,3,7|
+| CP 8      | Pizza    | Viernes            | 200       | Regular          | harina, salsa tomate     |Agregado/editado al menú correctamente      | 1,3,7|
+| CP 9      | Hamburguesa      | Lunes             | 0      | Regular         | Carne picada,Lechuga,Tomate     |Error al agregar/editar al menú       | 1,10,7|
+| CP 10     | Hamburguesa      | Lunes             | -10      | Regular         | Carne picada,Lechuga,Tomate     |Error al agregar/editar al menú       | 1,5,7|   
 
 
 ### Resultados de casos de prueba
@@ -53,7 +60,7 @@ RF7 : Debe restringirse el acceso de ciertos alimentos a algunos niños
 | Notas de pruebas                | Se agrega un menu, se vuelve a agregar el mismo menú, se agrega menú con nombre
 vacio, se agrega menu con precio vacio, se agrega menu con ingredientes vacios, se agrega al menu un plato con precio 0, se agrega al menu un plato con precio negativo  |
 | Defectos                        | No restringir agregar el mismo plato 2 veces, No restringir agregar platos sin nombre, No restringir agregar platos sin precio,No restringir agregar platos sin ingredientes,No restringir agregar platos con precio 0,No restringir agregar platos con precio negativo |
-| Inconvenientes                  | Ninguno                
+| Inconvenientes                  | Ninguno          |      
 
 | Misión                      |           Probar editar/borrar alimentos al menu ya agregados                         |
 |---------------------------------|--------------------------------------|
@@ -63,10 +70,19 @@ vacio, se agrega menu con precio vacio, se agrega menu con ingredientes vacios, 
 | Archivos de datos               |                                      |
 | Notas de pruebas                | Se borra menú del día, Se edita un plato para que sea igual a otro, se edita un plato y se le pone nombre vacio, se edita un plato y se lo pone precio 0 , se edita un plato y se ponen ingredientes vacios,se edita un plato y se le ponen precio negativo |
 | Defectos                        | No restringir editar el mismo plato 2 veces, No restringir editar platos sin nombre, No restringir editar platos sin precio,No restringir editar platos sin ingredientes,No restringir editar platos con precio 0,No restringir editar platos con precio negativo|
-| Inconvenientes                  | Ninguno                
+| Inconvenientes                  | Ninguno    |            
 
 
 ## Reporte de issues
+1. [Validación de Usuario](https://github.com/IngSoft-FIS-2023-2/obligatorio-n3a-silvachorocuenca/issues/31)
+2. [Validación de Menús Duplicados](https://github.com/IngSoft-FIS-2023-2/obligatorio-n3a-silvachorocuenca/issues/32)
+3. [Validación de Precios Negativos](https://github.com/IngSoft-FIS-2023-2/obligatorio-n3a-silvachorocuenca/issues/33)
+4. [Validación de Precio Nulo](https://github.com/IngSoft-FIS-2023-2/obligatorio-n3a-silvachorocuenca/issues/34)
+5. [Validación de Menú con Precio 0](https://github.com/IngSoft-FIS-2023-2/obligatorio-n3a-silvachorocuenca/issues/35)
+6. [Validación de Menú sin Nombre](https://github.com/IngSoft-FIS-2023-2/obligatorio-n3a-silvachorocuenca/issues/36)
+7. [Validación de Menú con Nombre inválido](https://github.com/IngSoft-FIS-2023-2/obligatorio-n3a-silvachorocuenca/issues/37)
+8. [Validación de Ingredientes](https://github.com/IngSoft-FIS-2023-2/obligatorio-n3a-silvachorocuenca/issues/38)
+9. [Validación de Tipo de Menú](https://github.com/IngSoft-FIS-2023-2/obligatorio-n3a-silvachorocuenca/issues/39)
 
 
 ## Informe de calidad del sistema
